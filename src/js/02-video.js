@@ -9,12 +9,12 @@ player.on('play', function () {
 });
 
 player.on('timeupdate',
-    _.throttle(
+    // _.throttle(
         function (data) {
     console.log('seconds:', data.seconds);
     localStorage.setItem('videoplayer-current-time', data.seconds);
         }
-        , 1000)
+        // , 1000)
 );
 
 const persistedVideoTime = JSON.parse(localStorage.getItem(LOCALSTORAGE_KEY_PLAYER_TIME));
