@@ -14,17 +14,22 @@ import "simplelightbox/dist/simple-lightbox.min.css";
 // 
 createGallery();
 
-// const lightbox =
 new SimpleLightbox('.gallery a', { captionsData: 'alt', captionDelay: '250' });
 	
 // 
 function createGallery() {
-    const galleryMarkup = galleryItems.map(item => createGaleryItemMarkup(item)).join('');
+    const galleryMarkup = galleryItems
+        .map(item => createGaleryItemMarkup(item))
+        .join('');
 
     galleryRef.insertAdjacentHTML('afterbegin', galleryMarkup);
 };
 
 // 
 function createGaleryItemMarkup({ preview, original, description }) {
-    return `<a class="gallery__item" href="${original}"><img class="gallery__image" src="${preview}" alt="${description}"/></a>`;
+    return `
+    <a class="gallery__item" href="${original}">
+        <img class="gallery__image" src="${preview}" alt="${description}"/>
+    </a>
+    `;
 }
