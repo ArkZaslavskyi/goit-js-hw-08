@@ -19,6 +19,3 @@ const persistedVideoTime = JSON.parse(localStorage.getItem(STORAGE_PLAYER_TIME))
 if (persistedVideoTime) {
     player.setCurrentTime(persistedVideoTime);
 }
-
-
-
